@@ -1,57 +1,69 @@
-let die = document.querySelector ('#die');
-let roll = document.querySelector ('#roll');
-let total = document.querySelector ('#total');
-let showAllrolls = document.querySelector ('#show-all-rolls');
-let allRolls= document.querySelector ('#all-rolls');
+let die = document.querySelector('#user-input');
+let roll = document.querySelector('#roll');
+let total = document.querySelector('#total');
+let showAllrolls = document.querySelector('#show-all-rolls');
+let allRolls = document.querySelector('#all-rolls');
+let reset = document.querySelector('#reset')
 
-let dieRolls= []
+let dieRolls = []
 
-roll.addEventListener ('click', function (){
-    console.log ("rolled the die!")
-    let diceToroll=Number(die.innerHTML) +1;
-    die.innerHTML= diceToroll
+roll.addEventListener('click', function () {
+
+
+    let numberOfdie = parseInt(die.value)
+    console.log('number of dice', numberOfdie)
+
+
+
+
+
+
+    for (let index = 0; index < numberOfdie; index++) {
+
+        let rollingThedie = Math.floor(Math.random() * 6) + 1
+        console.log(rollingThedie)
+
+        dieRolls.push(rollingThedie)
+
+    }
+    console.log(dieRolls)
+    let addingSums = 0
+    for (let index = 0; index < dieRolls.length; index++) {
+        addingSums += dieRolls[index]
+
+    }
+    console.log(addingSums)
+
+    total.innerHTML = addingSums
+})
+
+for (let index2 = 0; index2.length <= 0; index2++) {
+    total = index2 + dieRolls.push[index2]
+    console.log("total")
+}
+
+
+showAllrolls.addEventListener('click', function () {
+
+
+    //* write a new loop that loops over the dieRolls array creating a new list item for each number and adding that list to the innerHTML of the allRolls element. This LI should show the value of the roll.//*
+
+    console.log (allRolls)
+for( let index=0; index < dieRolls.length; index+=1){
+    let newListitem='<li class="all-rolls">' + dieRolls[index] + '</li>'
+        allRolls.innerHTML +=newListitem ;
+    
+
+        console.log(newListitem)
+}
+
+    
 })
 
 
-let xAmountofTimes=Math.floor(Math.random()*5) +1
 
-
-
-if (xAmountofTimes <5){
-let howDicerolled= Number(die.innerHTML)+1
-die.innerHTML=howDicerolled
-    console.log ("yea!")
-}
-
-else {
-
- (xAmountofTimes >=5)
-
-    console.log("nay!")
-}
-
-let total = (dieRolls.length +die.innerHTML)
-
-showAllrolls.addEventListener ('click', function ()
-{
-    console.log('show all rolls')
-
-let i=0
-
-while(i<dieRolls.length){
-console.log('dice rolled this many times')
-i++}
-
-dieRolls.push("");
-
-let showAllrolls = '<li class= "all-rolls">'+ dieRolls + "</ii>";
-allRolls.innerHTML +=showAllrolls;
+reset.addEventListener('click', function () {
+    console.log('times reset')
 
 
 })
-
-
-
-
-
-

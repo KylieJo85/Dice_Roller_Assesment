@@ -7,8 +7,9 @@
 </head>
 <body>
     <label for="rolling">Rolling </label>
-    <input type="text" id="die" name="die" required minlength="10" maxlength="100">
+    <input type="text" id="user-input" name="user-input" aria-valuemin="6">
     <button id="roll" type= "button">Roll the Die!</button>
+     <button id="reset">Reset</button>
     <div id= "total">Total:<span>_</span></div>
     <button id= "show-all-rolls" type= "button">Show all rolls</button>
     <ol id="all-rolls"></ol>
